@@ -32,7 +32,7 @@ This project was created only for good purposes and personal use.
 - Execute binary file(exe)
 
 #### How to run source
-(requires Node.js)
+(requires [Node.js](https://nodejs.org))
 ```
 $npm i discord-rpc
 $main.js
