@@ -18,7 +18,7 @@ This project was created only for good purposes and personal use.
 - Unzip archive
 
 #### Please set your informations in the config.json file!
-#### Remember that the lines has to be at least 2 characters long!
+#### Remember that the lines has to be at least 2 characters long and less than 128 characters!
 ```json
 {
     "clientId":"", #application id of a bot(already set in releases/source code)
