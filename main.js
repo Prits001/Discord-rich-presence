@@ -3,38 +3,38 @@ const fs = require('fs');
 let rawdata = fs.readFileSync(filename);
 let config = JSON.parse(rawdata);
 const clientId = config.clientId
-const DiscordApi = require('discord-rpc')
+const DiscordApi = require('discord-rpc');
+const { time } = require('console');
 const Api = new DiscordApi.Client({ transport: 'ipc'})
 DiscordApi.register(clientId);
 function Console(){
-    console.log("")
+    console.log("FireAlpaca Rich Presence - by Prits#2138 \n-----------------------------------------------------")
+    console.log("Connecting to Discord")
+    setTimeout(function(){console.log("[/....]")}, 1200);
+    setTimeout(function(){console.log("[#/...]")}, 1200);
+    setTimeout(function(){console.log("[##/..]")}, 1200);
+    setTimeout(function(){console.log("[###/.]")}, 1200);
+    setTimeout(function(){console.log("[####/]")}, 1200);
+    setTimeout(function(){console.log("[#####]");
+    console.clear()
+    console.log("FireAlpaca Rich Presence - by Prits#2138 \n-----------------------------------------------------")
+    console.log("Successfully Connected to Discord Gateway! :D \nPress Ctrl+C to abort")}, 5000);
+    
 }
 
 async function setActivity() {
     if (!Api) return;
     Api.setActivity({
         details: config.drawingname,
-        state: config.state,
+        state: config.additionalinfo,
         startTimestamp: Date.now(),
-        largeImageKey: config.largeImageIcon,
-        largeImageText: config.largeImageText,
-        smallImageKey: config.smallImageIcon,
-        smallImageText: config.smallImageText,
+        largeImageKey: 'icon',
+        largeImageText: config.largeimagetext,
+        smallImageKey: 'pfp',
+        smallImageText: "Made by Prits#2138",
         instance: false,
-        buttons: [
-            {
-                label: config.button1.text,
-                url: config.button1.link
-            },
-            {
-                label: config.button2.text,
-                url: config.button2.link
-            
-            }
-        ]
     });
 };
 Api.on('ready', async () => {
     setActivity()})
-Api.login(({ clientId })).catch(err => console.error(err))
-g
+Api.login(({ clientId })).catch(err => console.error(err)).then(Console())

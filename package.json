@@ -7,7 +7,7 @@
     "run": "node ./main.js"
   },
   "author": "Prits",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "discord-rpc": "^4.0.1"
   }
