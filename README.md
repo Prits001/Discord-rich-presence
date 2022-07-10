@@ -10,7 +10,7 @@ This project was created only for good purposes and personal use.
 ## Features
 - Async Discord rpc
 - Customizable by user
-## Setup your own bot for use (optional)
+## Setup your own application for use (optional)
 - Create an application on [Discord Developer Portal](https://discord.com/developers/applications)
 - Rich Presence -> Art Assets, Add An Image named 'icon' for large image/ 'pfp' for smaller image(preferably my discord avatar for credit)
 - General Information -> APPLICATION ID, Copy into config file -> clientId
