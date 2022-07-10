@@ -5,5 +5,15 @@
     
     "additionalinfo":"Bottom text",
 
-    "largeimagetext":":)"
+    "largeimagetext":":)",
+
+
+    "numberOfButtons":2,
+
+    "button1Text":"Button One",
+    "button1Link":"https://github.com/Prits001",
+
+    "button2Text":"Button Two",
+    "button2Link":"https://github.com/Prits001"
+
 }

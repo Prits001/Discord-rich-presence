@@ -17,6 +17,16 @@ function checkConfig(){
     console.log('\x1b[36m%s\x1b[0m',"[#]", "Drawing name: ", "\x1b[32m"+config.drawingname+"\x1b[0m")
     console.log('\x1b[36m%s\x1b[0m',"[#]", "Additional info: ", "\x1b[32m"+config.additionalinfo+"\x1b[0m")
     console.log('\x1b[36m%s\x1b[0m',"[#]", "Text when hovering above large image icon: ","\x1b[32m"+config.largeimagetext+"\x1b[0m")
+    console.log('\x1b[36m%s\x1b[0m',"[#]", "Ammount of buttons: ","\x1b[32m"+config.numberOfButtons+"\x1b[0m")
+    if(config.numberOfButtons > 0){
+        console.log('\x1b[36m%s\x1b[0m',"[#]", "Name of the 1st button: ","\x1b[32m"+config.button1Text+"\x1b[0m")
+        console.log('\x1b[36m%s\x1b[0m',"[#]", "Url of the 1st button: ","\x1b[32m"+config.button1Link+"\x1b[0m")
+        if(config.numberOfButtons === 2){
+            console.log('\x1b[36m%s\x1b[0m',"[#]", "Name of the 2nd button: ","\x1b[32m"+config.button2Text+"\x1b[0m")
+            console.log('\x1b[36m%s\x1b[0m',"[#]", "Url of the 2nd button: ","\x1b[32m"+config.button2Link+"\x1b[0m")
+        }
+    }
+    if(config.numberOfButtons < 0 || config.numberOfButtons > 2){console.log(`\x1b[31mYou can't have ${config.numberOfButtons} buttons! Please abort and fix the issue!\x1b[0m`)}
     console.log("Starting in 10 seconds..")
     console.log("\x1b[46mPress Ctrl+C to abort\x1b[0m")
     Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 10000);
@@ -35,6 +45,7 @@ function start(){
 
 async function setActivity() {
     if (!Api) return;
+    if(config.numberOfButtons === 0){
     Api.setActivity({
         details: config.drawingname,
         state: config.additionalinfo,
@@ -44,7 +55,47 @@ async function setActivity() {
         smallImageKey: 'pfp',
         smallImageText: "Made by Prits#2138",
         instance: false,
-    });
+    });}
+    if(config.numberOfButtons === 1){
+        Api.setActivity({
+            details: config.drawingname,
+            state: config.additionalinfo,
+            startTimestamp: Date.now(),
+            largeImageKey: 'icon',
+            largeImageText: config.largeimagetext,
+            smallImageKey: 'pfp',
+            smallImageText: "Made by Prits#2138",
+            instance: false,
+            buttons: [
+                {
+                    label: config.button1Text,
+                    url: config.button1Link
+                }
+            ]
+        })
+    }
+    if(config.numberOfButtons === 2){
+        Api.setActivity({
+            details: config.drawingname,
+            state: config.additionalinfo,
+            startTimestamp: Date.now(),
+            largeImageKey: 'icon',
+            largeImageText: config.largeimagetext,
+            smallImageKey: 'pfp',
+            smallImageText: "Made by Prits#2138",
+            instance: false,
+            buttons: [
+                {
+                    label: config.button1Text,
+                    url: config.button1Link
+                },
+                {
+                    label: config.button2Text,
+                    url: config.button2Link
+                }
+            ]
+        })
+    }
 };
 start()
 Api.on('ready', async () => {

@@ -15,7 +15,7 @@ This project was created only for good purposes and personal use.
 - Unzip archive
 
 #### Please set your informations in the config.json file!
-#### Remember that the line has to be at least 2 characters long!
+#### Remember that the lines has to be at least 2 characters long!
 ```json
 {
     "clientId":"", #application id of a bot(already set in releases/source code)
@@ -24,7 +24,17 @@ This project was created only for good purposes and personal use.
     
     "additionalinfo":"Bottom text", #second line in rich presence
 
-    "largeimagetext":":)" #text when hovering above icon
+    "largeimagetext":":)", #text when hovering above icon
+
+
+    "numberOfButtons":2, #number of buttons shown(0-2)
+    #button one name and url
+    "button1Text":"Button One", 
+    "button1Link":"https://github.com/Prits001",
+    #button two name and url
+    "button2Text":"Button Two",
+    "button2Link":"https://github.com/Prits001"
+
 }
 ```
 ## How to run
