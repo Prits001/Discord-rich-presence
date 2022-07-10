@@ -1,0 +1,14 @@
+{
+  "name": "discord-rich-presence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "run": "node ./main.js"
+  },
+  "author": "Prits",
+  "license": "ISC",
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  }
+}
