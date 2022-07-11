@@ -31,6 +31,9 @@ This project was created only for good purposes and personal use.
 
 
     "numberOfButtons":2, #number of buttons shown(0-2)
+    
+    "loadingdelay": 5, #delay in seconds before loading
+
     #button one name and url
     "button1Text":"Button One", 
     "button1Link":"https://github.com/Prits001",

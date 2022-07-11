@@ -10,6 +10,8 @@
 
     "numberOfButtons":2,
 
+    "loadingdelay": 5,
+
     "button1Text":"Button One",
     "button1Link":"https://github.com/Prits001",
 

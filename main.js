@@ -30,6 +30,7 @@ function checkConfig(){
     console.log('\x1b[36m%s\x1b[0m',"[#]", "Additional info: ", "\x1b[32m"+config.additionalinfo+"\x1b[0m")
     console.log('\x1b[36m%s\x1b[0m',"[#]", "Text when hovering above large image icon: ","\x1b[32m"+config.largeimagetext+"\x1b[0m")
     console.log('\x1b[36m%s\x1b[0m',"[#]", "Ammount of buttons: ","\x1b[32m"+config.numberOfButtons+"\x1b[0m")
+    console.log('\x1b[36m%s\x1b[0m',"[#]", "Loading Delay: ","\x1b[32m"+config.loadingdelay+"\x1b[0m")
     if(config.numberOfButtons > 0){
         console.log('\x1b[36m%s\x1b[0m',"[#]", "Name of the 1st button: ","\x1b[32m"+config.button1Text+"\x1b[0m")
         console.log('\x1b[36m%s\x1b[0m',"[#]", "Url of the 1st button: ","\x1b[32m"+config.button1Link+"\x1b[0m")
@@ -38,9 +39,9 @@ function checkConfig(){
             console.log('\x1b[36m%s\x1b[0m',"[#]", "Url of the 2nd button: ","\x1b[32m"+config.button2Link+"\x1b[0m")
         }
     }
-    console.log("Starting in 10 seconds..")
+    console.log(`Starting in ${config.loadingdelay} seconds..`)
     console.log("\x1b[46mPress Ctrl+C to abort\x1b[0m")
-    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 10000);
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, config.loadingdelay * 1000);
     return true
 }
 function start(){
