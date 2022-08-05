@@ -1,4 +1,4 @@
-<h1 align="center">[Discord] FireAlpaca-rich-presence</h1>
+<h1 align="center">[Discord] Discord-rich-presence</h1>
 Script written in JavaScript adding user a cutomizable rich presence in their discord account.
 
 ## Disclaimer
@@ -23,7 +23,7 @@ This project was created only for good purposes and personal use.
 {
     "clientId":"", #application id of a bot(already set in releases/source code)
 
-    "drawingname":"Drawing something", #first line in rich presence
+    "description":"Doing something", #first line in rich presence
     
     "additionalinfo":"Bottom text", #second line in rich presence
 
