@@ -55,4 +55,4 @@ $npm i discord-rpc
 $main.js
 ```
 ## Contacts
-- Discord: Prits#2138
+- Discord: Prits#7777
